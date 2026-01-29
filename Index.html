@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparing Access</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <button id="closeBtn" class="close-btn" aria-label="Close" title="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 6 L18 18 M6 18 L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+    </button>
+    <h1>Preparing Your Access...</h1>
+    <p>Please wait while we securely prepare your page.<br>
+    This usually takes less than 5 seconds.</p>
+
+    <div class="loader">
+        <span></span>
+    </div>
+
+    <a id="continueBtn" class="btn" href="#">CONTINUE NOW</a>
+
+    <div class="note">Do not close this page</div>
+</div>
+
+<script>
+    // URL tujuan redirect
+    var redirectUrl = "https://hypothesisgarden.com/hpctn3pkr?key=9ff726ff49b05c49afa1d7670ad14ccc";
+
+    // Auto redirect setelah 5 detik
+    setTimeout(function () {
+        window.location.href = redirectUrl;
+    }, 5000);
+
+    // Klik manual
+    document.getElementById("continueBtn").addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = redirectUrl;
+    });
+
+    // Tombol close (X)
+    var closeBtn = document.getElementById("closeBtn");
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = redirectUrl;
+        });
+    }
+</script>
+</body>
+</html>
