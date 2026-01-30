@@ -16,7 +16,7 @@
     </button>
     <h1>Preparing Your Access...</h1>
     <p>Please wait while we securely prepare your page.<br>
-    This usually takes less than 5 seconds.</p>
+    This usually takes less than 2 seconds.</p>
 
     <div class="loader">
         <span></span>
@@ -34,7 +34,7 @@
     // Auto redirect setelah 5 detik
     setTimeout(function () {
         window.location.href = redirectUrl;
-    }, 5000);
+    }, 1500);
 
     // Klik manual
     document.getElementById("continueBtn").addEventListener("click", function (e) {
@@ -59,4 +59,5 @@
 <!-- Histats.com  END  -->
 </body>
 </html>
+
 
