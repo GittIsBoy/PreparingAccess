@@ -10,17 +10,17 @@
     <!-- Facebook / Open Graph -->
     <!--
       IMPORTANT:
-      - og:video harus menunjuk ke file video yang bisa diputar langsung (misalnya .mp4)
-      - jangan pakai URL iframe/embed seperti https://streamable.com/e/1ilosz di og:video
-      - URL embed itu untuk tampilan di halaman web, bukan untuk metadata video Facebook
+      - og:video harus menunjuk ke file video langsung (.mp4) yang bisa diputar publik
+      - jangan pakai URL embed/iframe untuk og:video
+      - URL halaman web yang dibagikan ke Facebook tetap harus halaman HTML, bukan file video
     -->
     <meta property="og:type" content="video.other" />
     <meta property="og:title" content="Judul Video Preview" />
     <meta property="og:description" content="Deskripsi singkat video untuk preview di Facebook" />
-    <meta property="og:url" content="https://yourdomain.com/video-page" />
-    <meta property="og:image" content="https://yourdomain.com/thumbnail.jpg" />
+    <meta property="og:url" content="https://files.catbox.moe/5me8mz.mp4" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" />
 
-    <meta property="og:video" content="https://yourdomain.com/video.mp4" />
+    <meta property="og:video" content="https://files.catbox.moe/5me8mz.mp4" />
     <meta property="og:video:type" content="video/mp4" />
     <meta property="og:video:width" content="1280" />
     <meta property="og:video:height" content="720" />
@@ -29,8 +29,8 @@
     <meta name="twitter:card" content="player" />
     <meta name="twitter:title" content="Judul Video Preview" />
     <meta name="twitter:description" content="Deskripsi singkat video untuk preview di Facebook" />
-    <meta name="twitter:image" content="https://yourdomain.com/thumbnail.jpg" />
-    <meta name="twitter:player" content="https://yourdomain.com/video-page" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" />
+    <meta name="twitter:player" content="https://files.catbox.moe/5me8mz.mp4" />
     <meta name="twitter:player:width" content="1280" />
     <meta name="twitter:player:height" content="720" />
   </head>
@@ -40,17 +40,13 @@
 
     <div style="position: relative; width: 100%; height: 560px; max-width: 960px; margin: 20px auto;">
       <!--
-        Ini untuk embed di halaman web. Ini BUKAN URL yang harus dipakai di og:video.
-        Facebook tidak akan menganggap URL iframe sebagai file video yang bisa diputar.
+        Ini untuk embed di halaman web. Tidak harus sama dengan og:video.
+        Facebook baca og:video untuk preview link, sedangkan iframe ini hanya untuk tampilan di halaman web.
       -->
-      <iframe
-        src="https://streamable.com/e/1ilosz"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        allowfullscreen
-        style="width:100%;height:100%;position:absolute;left:0;top:0;overflow:hidden;"
-      ></iframe>
+      <video controls width="100%" height="100%" poster="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80">
+        <source src="https://files.catbox.moe/5me8mz.mp4" type="video/mp4" />
+        Browser kamu tidak mendukung video tag.
+      </video>
     </div>
   </body>
 </html>
